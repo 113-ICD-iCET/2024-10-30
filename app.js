@@ -98,7 +98,7 @@
 //             <th>address</th>
 //             <th>age</th>
 //         </tr>`;
-    
+
 //     customers.forEach(customer =>{
 //         body+=`
 //         <tr>
@@ -109,7 +109,7 @@
 //     })
 //     tblCustomerList.innerHTML=body;
 //     console.log(body);
-    
+
 
 // }
 // loadTable();
@@ -130,86 +130,119 @@
 // -------------------------------------------------------------------------------------
 
 let customer = {
-    name:"saman",
-    age:20,
-    address:"gampaha",
-    email:"saman@gmail.com"
+    name: "saman",
+    age: 20,
+    address: "gampaha",
+    email: "saman@gmail.com"
 }
 
 let customerList = [{
-    name:"saman",
-    age:20,
-    address:"gampaha",
-    email:"saman@gmil.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
-},{
-    name:"nimal",
-    age:30,
-    address:"panadura",
-    email:"nimal@gmail.com"
+    name: "saman",
+    age: 20,
+    address: "gampaha",
+    email: "saman@gmil.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
+}, {
+    name: "nimal",
+    age: 30,
+    address: "panadura",
+    email: "nimal@gmail.com"
 }];
 
 // for(let i =0; i<customerList.length;i++){
 //     console.log(customerList[i]);
-    
+
 // }
 
 // for(let customer of customerList){
 //     console.log(customer);
 // }
 
-let tblCustomers = document.getElementById("tblCustomerList");
+// let tblCustomers = document.getElementById("tblCustomerList");
 
-let tblBody="";
+// let tblBody="";
 
-customerList.forEach(customer =>{
-    console.log(customer);
-    tblBody+=`
-            <tr>
-            <td>${customer.name}</td>
-            <td>${customer.address}</td>
-            <td>${customer.age}</td>
-            <td>${customer.email}</td>
-        </tr>
-    `;
-    
-})
+// customerList.forEach((customer) =>{
+//   //  console.log(customer);
+//     tblBody+=`
+//             <tr>
+//             <td>${customer.name}</td>
+//             <td>${customer.address}</td>
+//             <td>${customer.age}</td>
+//             <td>${customer.email}</td>
+//         </tr>`;  
+// })
+// tblCustomers.innerHTML=tblBody;
 
-tblCustomers.innerHTML=tblBody;
-
-console.log(tblBody);
+// //console.log(tblBody);
 
 
-//console.log(customerList[0]);
+// //console.log(customerList[0]);
+
+// // -----------------------------------------------------------------
+
+// let customerNameList = document.getElementById("custNameList");
+// let listBody="";
+// customerList.forEach((customer)=>{
+//     listBody+=`<li>${customer.name}</li>`
+// })
+
+// customerNameList.innerHTML=listBody;
+
+// console.log(customerNameList);
+
+
+let col =document.getElementById("row");
+fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(dataList => {
+        let colBody="";
+        dataList.forEach(product => {
+            colBody+=`
+        <div class="col" >
+            <div class="card" style="width: 18rem;">
+                <img src=${product.image} class="card-img-top" alt="...">
+                 <div class="card-body">
+                    <h5 class="card-title">${product.title}</h5>
+                    <p class="card-text">${product.description}</p>
+                    <p>Price : ${product.price}$</p>
+                    <a href="#" class="btn btn-primary">Buy Now -> </a>
+                </div>
+            </div>
+                 </div>
+            `
+        });
+        col.innerHTML=colBody;
+    })
 
 
 
