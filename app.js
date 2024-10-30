@@ -221,28 +221,28 @@ let customerList = [{
 // console.log(customerNameList);
 
 
-let col =document.getElementById("row");
-fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
-    .then(dataList => {
-        let colBody="";
-        dataList.forEach(product => {
-            colBody+=`
-        <div class="col" >
-            <div class="card" style="width: 18rem;">
-                <img src=${product.image} class="card-img-top" alt="...">
-                 <div class="card-body">
-                    <h5 class="card-title">${product.title}</h5>
-                    <p class="card-text">${product.description}</p>
-                    <p>Price : ${product.price}$</p>
-                    <a href="#" class="btn btn-primary">Buy Now -> </a>
-                </div>
-            </div>
-                 </div>
-            `
-        });
-        col.innerHTML=colBody;
-    })
+// let col =document.getElementById("row");
+// fetch('https://fakestoreapi.com/products')
+//     .then(res => res.json())
+//     .then(dataList => {
+//         let colBody="";
+//         dataList.forEach(product => {
+//             colBody+=`
+//         <div class="col" >
+//             <div class="card" style="width: 18rem;">
+//                 <img src=${product.image} class="card-img-top" alt="...">
+//                  <div class="card-body">
+//                     <h5 class="card-title">${product.title}</h5>
+//                     <p class="card-text">${product.description}</p>
+//                     <p>Price : ${product.price}$</p>
+//                     <a href="#" class="btn btn-primary">Buy Now -> </a>
+//                 </div>
+//             </div>
+//                  </div>
+//             `
+//         });
+//         col.innerHTML=colBody;
+//     })
 
 
 
